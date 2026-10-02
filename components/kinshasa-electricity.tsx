@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { MapPinned } from 'lucide-react'
 import { PageShell, SituationSearch, TopQuartiers } from '@/components/situation'
 import { useApi } from '@/lib/use-api'
 import { getStatistics } from '@/services/outages'
@@ -55,6 +56,7 @@ export function KinshasaElectricity() {
             <div className="mt-5 flex flex-col gap-3 sm:mt-7 sm:flex-row">
               <Link href="/signaler?type=outage" className={`inline-flex min-h-14 items-center justify-center rounded-xl bg-[#007fff] px-5 text-base font-bold text-white hover:bg-[#006fe0] ${focusRing}`}>Signaler une coupure</Link>
               <Link href="/signaler?type=restored" className={`inline-flex min-h-14 items-center justify-center rounded-xl border border-[#cbd5e1] bg-white px-5 text-base font-bold text-[#0f172a] hover:border-[#007fff] hover:text-[#0067d8] ${focusRing}`}>Signaler le retour du courant</Link>
+              <Link href="/carte" className={`inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-[#cbd5e1] bg-white px-5 text-base font-bold text-[#0067d8] hover:border-[#007fff] ${focusRing}`}><MapPinned aria-hidden="true" className="size-5" /> Voir la carte</Link>
             </div>
             <Figures />
           </div>

@@ -21,7 +21,8 @@ export function FlagLine() {
 
 const navigation = [
   { href: '/', label: 'Accueil', Icon: House },
-  { href: '/situation', label: 'Situation', Icon: MapPinned },
+  { href: '/situation', label: 'Situation', Icon: Activity },
+  { href: '/carte', label: 'Carte', Icon: MapPinned },
   { href: '/signaler', label: 'Signaler', Icon: Zap },
   { href: '/a-propos', label: 'À propos', Icon: Info },
 ]
@@ -63,7 +64,7 @@ export function MobileTabBar() {
 
   return (
     <nav aria-label="Navigation principale" className="fixed inset-x-0 bottom-0 z-30 border-t border-[#e2e8f0] bg-white pb-[env(safe-area-inset-bottom)] md:hidden">
-      <ul className="mx-auto grid max-w-md grid-cols-4">
+      <ul className="mx-auto grid max-w-md grid-cols-5">
         {navigation.map(({ href, label, Icon }) => {
           const current = isCurrent(href)
           const primary = href === '/signaler'
@@ -71,7 +72,7 @@ export function MobileTabBar() {
           return (
             <li key={href}>
               <Link href={href} aria-current={current ? 'page' : undefined} className={`flex min-h-16 flex-col items-center justify-center gap-1 px-1 text-xs font-bold focus:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-[#007fff]/30 ${current || primary ? 'text-[#0067d8]' : 'text-[#475569]'}`}>
-                <span className={`flex h-7 w-12 items-center justify-center rounded-full ${primary ? 'bg-[#007fff] text-white' : current ? 'bg-[#eff6ff]' : ''}`}><Icon aria-hidden="true" className="size-5" /></span>
+                <span className={`flex h-7 w-11 items-center justify-center rounded-full ${primary ? 'bg-[#007fff] text-white' : current ? 'bg-[#eff6ff]' : ''}`}><Icon aria-hidden="true" className="size-5" /></span>
                 {label}
               </Link>
             </li>

@@ -24,6 +24,7 @@ export function SiteFooter({ className = '' }: { className?: string }) {
           <p className="font-bold">Explorer</p>
           <ul className="mt-2 flex flex-col text-base text-[#a8b7ca] md:text-sm">
             <li><Link href="/situation" className={linkClass}>Situation</Link></li>
+            <li><Link href="/carte" className={linkClass}>Carte des coupures</Link></li>
             <li><Link href="/signaler" className={linkClass}>Faire un signalement</Link></li>
           </ul>
         </nav>

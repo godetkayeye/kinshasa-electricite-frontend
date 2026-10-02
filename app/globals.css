@@ -127,3 +127,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Map: the number of reports written on a marker. */
+.leaflet-tooltip.map-count {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.leaflet-tooltip.map-count::before {
+  display: none;
+}
+
+.leaflet-container {
+  font-family: inherit;
+}

@@ -124,3 +124,32 @@ export type RecentWindow = {
 
 export type ApiData<T> = { data: T }
 export type ApiDataWithWindow<T> = { data: T; meta: RecentWindow }
+
+export type MapLevel = 'none' | 'low' | 'medium' | 'high'
+export type MapPeriod = '24h' | '7d'
+
+/** A commune or a quartier of the map. Without coordinates it must not be drawn. */
+export type MapPlace = {
+  id: number
+  name: string
+  slug: string
+  latitude: number | null
+  longitude: number | null
+  outage_reports_count: number
+  restoration_reports_count: number
+  last_reported_at: string | null
+  level: MapLevel
+}
+
+export type MapCommune = MapPlace & { affected_quartiers_count: number }
+export type MapQuartier = MapPlace & { commune_id: number; most_reported_outage_duration: OutageDuration | null }
+
+export type MapSituation = {
+  communes: MapCommune[]
+  /** Only the quartiers reported during the period. */
+  quartiers: MapQuartier[]
+  period: MapPeriod
+  /** Number of outage reports from which each level starts. */
+  levels: Record<Exclude<MapLevel, 'none'>, number>
+  quartiers_without_coordinates: number
+}
