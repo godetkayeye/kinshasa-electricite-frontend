@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { SITE_DESCRIPTION, SITE_NAME, siteUrl } from '@/lib/site'
 import './globals.css'
@@ -50,7 +49,6 @@ export default function RootLayout({
           Aller au contenu
         </a>
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )

@@ -8,6 +8,9 @@ export const SITE_DESCRIPTION = "Signalez et consultez les coupures d'électrici
 
 export const INDEPENDENCE_NOTICE = "Cette plateforme est une initiative indépendante et n'est ni un service officiel de la SNEL, ni de la Ville de Kinshasa, ni du Gouvernement de la RDC."
 
+/** Contact shown on the contact page and in the footer. */
+export const CONTACT = { name: 'techwithkay', phone: '+243 835 370 927', phoneHref: 'tel:+243835370927' }
+
 /** Public URL of the site, used for absolute links in shared previews. Optional in development. */
 export function siteUrl(): URL | undefined {
   const url = process.env.NEXT_PUBLIC_SITE_URL?.trim()

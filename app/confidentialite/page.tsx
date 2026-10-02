@@ -52,9 +52,6 @@ export default function PrivacyPage() {
         <p>Un administrateur peut invalider un signalement manifestement abusif, incohérent ou répété. Un signalement invalidé n&apos;est plus pris en compte dans les informations affichées sur le site, mais il n&apos;est pas supprimé : il reste enregistré, avec la trace de la décision.</p>
       </InfoSection>
 
-      <InfoSection title="Mesure d'audience">
-        <p>Lorsque le site est en ligne, un outil de mesure d&apos;audience (Vercel Analytics) compte les pages consultées afin de connaître la fréquentation du site.</p>
-      </InfoSection>
 
       <InfoSection title="À quoi servent les données">
         <p>Les signalements servent uniquement à donner une vue communautaire de la situation électrique par quartier et par commune à Kinshasa.</p>
@@ -66,7 +63,7 @@ export default function PrivacyPage() {
       </InfoSection>
 
       <InfoSection title="Une question ?">
-        <p>Les moyens de nous joindre seront indiqués sur la page <Link href="/contact" className="font-bold text-[#0067d8] underline">Contact</Link>.</p>
+        <p>Vous pouvez nous joindre aux coordonnées indiquées sur la page <Link href="/contact" className="font-bold text-[#0067d8] underline">Contact</Link>.</p>
       </InfoSection>
     </InfoPage>
   )

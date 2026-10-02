@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Zap } from 'lucide-react'
-import { INDEPENDENCE_NOTICE, SITE_NAME } from '@/lib/site'
+import { CONTACT, INDEPENDENCE_NOTICE, SITE_NAME } from '@/lib/site'
 
 function FlagLine() {
   return <div aria-hidden="true" className="h-1 w-full bg-[linear-gradient(90deg,#007fff_0_48%,#f7d618_48%_52%,#ce1021_52%)]" />
@@ -33,6 +33,7 @@ export function SiteFooter({ className = '' }: { className?: string }) {
             <li><Link href="/a-propos" className={linkClass}>À propos</Link></li>
             <li><Link href="/confidentialite" className={linkClass}>Confidentialité</Link></li>
             <li><Link href="/contact" className={linkClass}>Contact</Link></li>
+            <li><a href={CONTACT.phoneHref} className={linkClass}>{CONTACT.name} · {CONTACT.phone}</a></li>
           </ul>
         </nav>
       </div>

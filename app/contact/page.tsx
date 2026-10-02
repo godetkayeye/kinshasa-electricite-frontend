@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Phone } from 'lucide-react'
 import { InfoPage, InfoSection } from '@/components/info-page'
-import { INDEPENDENCE_NOTICE, pageMetadata } from '@/lib/site'
+import { CONTACT, INDEPENDENCE_NOTICE, pageMetadata } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Contact',
@@ -9,13 +10,16 @@ export const metadata: Metadata = pageMetadata({
   path: '/contact',
 })
 
-// The official contact details of the project are not defined yet. Add them
-// in the first section when they are: never publish a placeholder address.
 export default function ContactPage() {
   return (
-    <InfoPage eyebrow="Nous joindre" title="Contact" intro="Les coordonnées officielles du projet seront publiées sur cette page.">
+    <InfoPage eyebrow="Nous joindre" title="Contact" intro="Une question, une remarque ou un problème sur le site ? Vous pouvez nous joindre par téléphone.">
       <InfoSection title="Coordonnées">
-        <p>Les coordonnées de contact ne sont pas encore disponibles. Elles seront indiquées ici dès qu&apos;elles seront définies.</p>
+        <p><strong>{CONTACT.name}</strong></p>
+        <p>
+          <a href={CONTACT.phoneHref} className="inline-flex min-h-12 items-center gap-2 rounded-xl border border-[#cbd5e1] bg-white px-4 text-lg font-bold text-[#0067d8] hover:border-[#007fff] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#007fff]/30">
+            <Phone aria-hidden="true" className="size-5" /> {CONTACT.phone}
+          </a>
+        </p>
       </InfoSection>
 
       <InfoSection title="Signaler une situation électrique">
